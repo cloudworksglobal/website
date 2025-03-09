@@ -1,4 +1,4 @@
-export default function Blog() {
+export default function blog() {
     return (
       <section className="py-16 bg-white text-center">
         <div className="container mx-auto px-4">

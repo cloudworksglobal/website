@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function contact() {
     return (
       <section className="py-16 bg-white text-center">
         <div className="container mx-auto px-4">
@@ -17,7 +17,11 @@ export default function Contact() {
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold" htmlFor="message">Mensaje</label>
-              <textarea id="message" className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" rows="4"></textarea>
+              <textarea 
+  id="message" 
+  className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" 
+  rows={4}>
+</textarea>
             </div>
             <button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700">
               Enviar Mensaje
