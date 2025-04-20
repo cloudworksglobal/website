@@ -1,88 +1,346 @@
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
+
 export default function Home() {
   return (
     <>
-      <section className="bg-gray-100 py-20 text-center">
+      {/* HERO */}
+      <section className="bg-gray-100 py-24 text-center">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold text-gray-900">Bienvenido a Cloudworks</h1>
-          <p className="text-lg text-gray-700 mt-4">
-            Soluciones innovadoras en desarrollo web y automatización.
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight font-montserrat">
+            Infraestructura Digital para Impulsar Ventas
+          </h1>
+          <p className="text-lg text-gray-700 mt-8 max-w-2xl mx-auto font-lato">
+            Implementamos plataformas web, automatizaciones y sistemas de captación de leads, integrando procesos comerciales para lograr eficiencia, escalabilidad y resultados reales.
           </p>
-          <a
-            href="/services"
-            className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700"
-          >
-            Descubre nuestros servicios
-          </a>
+          <div className="mt-10">
+            <Link
+              href="https://meetings.hubspot.com/apalmieri-paso"
+              className="bg-[#0068ca] hover:bg-[#0050a3] text-white font-bold py-3 px-8 rounded-lg transition-all inline-block"
+            >
+              Agendar una llamada
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white text-center">
+      {/* FILOSOFÍA DE TRABAJO */}
+      <section className="py-24 bg-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900">¿Quiénes Somos?</h2>
-          <p className="text-lg text-gray-700 mt-4">
-            En Cloudworks, transformamos ideas en soluciones digitales eficientes.
-            Con más de 10 años de experiencia en desarrollo web, eCommerce y automatización,
-            ayudamos a empresas a crecer en el entorno digital.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-100 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900">Nuestros Servicios</h2>
-          <div className="grid md:grid-cols-3 gap-8 mt-8">
-            <div className="p-6 bg-white rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Desarrollo Web</h3>
-              <p className="text-gray-700 mt-2">
-                Creamos sitios web a medida con tecnologías modernas como Next.js, React y Tailwind CSS.
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-10">
+            Nuestra Filosofía de Trabajo
+          </h2>
+          <div className="grid md:grid-cols-2 gap-10 text-left max-w-5xl mx-auto">
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Integraciones & APIs</h3>
+              <p className="text-gray-700 font-lato">
+                Implementamos integraciones inteligentes mediante APIs RESTful y Webhooks para conectar CRMs, ERPs y plataformas de eCommerce, garantizando flujos de información estables y escalables.
               </p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">eCommerce</h3>
-              <p className="text-gray-700 mt-2">
-                Especialistas en Shopify y WooCommerce para potenciar tu tienda online.
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Arquitectura & Performance</h3>
+              <p className="text-gray-700 font-lato">
+                Diseñamos arquitecturas modulares, enfocadas en velocidad de carga, buenas prácticas SEO, lazy loading de recursos e infraestructuras que superan métricas como Core Web Vitals.
               </p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900">Automatización</h3>
-              <p className="text-gray-700 mt-2">
-                Integramos APIs y herramientas para optimizar procesos empresariales.
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Testing & QA</h3>
+              <p className="text-gray-700 font-lato">
+                Aplicamos estrategias de testing funcional, de integración y de performance para validar robustez, escalabilidad y experiencia de usuario antes de cada despliegue.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Metodologías Ágiles</h3>
+              <p className="text-gray-700 font-lato">
+                Seguimos frameworks ágiles (Scrum, Kanban) asegurando iteraciones rápidas, priorización de entregables de valor comercial y visibilidad total al cliente en todo el proceso.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white text-center">
+{/* TECNOLOGÍAS QUE USAMOS */}
+<section className="py-24 bg-gray-50 text-center">
+  <div className="container mx-auto px-4">
+    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-16">
+      Tecnologías que impulsan nuestros proyectos
+    </h2>
+    <div className="grid grid-cols-4 md:grid-cols-7 gap-6 items-center justify-center">
+      {/* Next.js */}
+      <div className="flex flex-col items-center space-y-2">
+        <div className="w-10 h-10 md:w-16 md:h-16">
+          <Image src="https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg" alt="Next.js" width={40} height={40} />
+        </div>
+        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">Next.js</p>
+      </div>
+
+      {/* React */}
+      <div className="flex flex-col items-center space-y-2">
+        <div className="w-10 h-10 md:w-16 md:h-16">
+          <Image src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" width={40} height={40} />
+        </div>
+        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">React</p>
+      </div>
+
+      {/* Shopify */}
+      <div className="flex flex-col items-center space-y-2">
+        <div className="w-10 h-10 md:w-16 md:h-16">
+          <Image src="https://www.vectorlogo.zone/logos/shopify/shopify-icon.svg" alt="Shopify" width={40} height={40} />
+        </div>
+        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">Shopify</p>
+      </div>
+
+      {/* WordPress */}
+      <div className="flex flex-col items-center space-y-2">
+        <div className="w-10 h-10 md:w-16 md:h-16">
+          <Image src="https://www.vectorlogo.zone/logos/wordpress/wordpress-icon.svg" alt="WordPress" width={40} height={40} />
+        </div>
+        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">WordPress</p>
+      </div>
+
+      {/* Node.js */}
+      <div className="flex flex-col items-center space-y-2">
+        <div className="w-10 h-10 md:w-16 md:h-16">
+          <Image src="https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg" alt="Node.js" width={40} height={40} />
+        </div>
+        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">Node.js</p>
+      </div>
+
+      {/* HubSpot */}
+      <div className="flex flex-col items-center space-y-2">
+        <div className="w-10 h-10 md:w-16 md:h-16">
+          <Image src="https://www.vectorlogo.zone/logos/hubspot/hubspot-icon.svg" alt="HubSpot" width={40} height={40} />
+        </div>
+        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">HubSpot</p>
+      </div>
+
+      {/* PHP */}
+      <div className="flex flex-col items-center space-y-2">
+        <div className="w-10 h-10 md:w-16 md:h-16">
+          <Image src="https://www.vectorlogo.zone/logos/php/php-icon.svg" alt="PHP" width={40} height={40} />
+        </div>
+        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">PHP</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      {/* CÓMO TRABAJAMOS */}
+      <section className="py-24 bg-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900">Casos de Éxito</h2>
-          <p className="text-lg text-gray-700 mt-4">
-            Hemos trabajado con empresas líderes en distintos sectores, ayudándolas a escalar sus negocios.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-16">
+            ¿Cómo trabajamos?
+          </h2>
+          <div className="grid md:grid-cols-4 gap-12 text-center">
+            {/* Step 1 */}
+            <div className="flex flex-col items-center">
+              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m0 14v2m0-6h6m2 4H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v5" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold font-montserrat mb-4">Análisis Técnico Comercial</h3>
+              <p className="text-gray-700 font-lato">
+                Entendemos las necesidades comerciales y analizamos los sistemas existentes para planificar una solución efectiva.
+              </p>
+            </div>
+            {/* Step 2 */}
+            <div className="flex flex-col items-center">
+              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a4 4 0 00-8 0v2a4 4 0 008 0zm-9 4v1a3 3 0 006 0v-1a3 3 0 00-6 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold font-montserrat mb-4">Arquitectura & Planificación</h3>
+              <p className="text-gray-700 font-lato">
+                Diseñamos arquitecturas flexibles y modulares, priorizando velocidad de implementación y escalabilidad a largo plazo.
+              </p>
+            </div>
+            {/* Step 3 */}
+            <div className="flex flex-col items-center">
+              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold font-montserrat mb-4">Desarrollo & Testing</h3>
+              <p className="text-gray-700 font-lato">
+                Ejecutamos desarrollos frontend/backend y testeamos integraciones asegurando funcionalidad, estabilidad y rendimiento óptimo.
+              </p>
+            </div>
+            {/* Step 4 */}
+            <div className="flex flex-col items-center">
+              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m4 0h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold font-montserrat mb-4">Implementación & Optimización</h3>
+              <p className="text-gray-700 font-lato">
+                Desplegamos soluciones de forma controlada, monitoreando resultados y proponiendo mejoras continuas basadas en métricas reales.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-100 text-center">
+      {/* BENEFICIOS DE CLOUDWORKS */}
+      <section className="py-24 bg-gray-50 text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900">Blog</h2>
-          <p className="text-lg text-gray-700 mt-4">
-            Explora nuestros artículos sobre tecnología, desarrollo y estrategias digitales.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-16">
+            ¿Por qué elegirnos?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto text-left">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Entendimiento Comercial Real</h3>
+              <p className="text-gray-700 font-lato">
+                Conocemos a fondo las dinámicas comerciales de ventas B2B y B2C, orientando las implementaciones a resultados concretos de negocio.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Expertise en Frontend Dinámico</h3>
+              <p className="text-gray-700 font-lato">
+                Creamos interfaces modernas, rápidas y optimizadas para performance, experiencia de usuario y escalabilidad en el tiempo.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Tecnologías Probadas</h3>
+              <p className="text-gray-700 font-lato">
+                Apostamos a plataformas líderes como Shopify, WooCommerce, WordPress y Next.js, asegurando estabilidad, soporte y evolución.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Integraciones Estratégicas</h3>
+              <p className="text-gray-700 font-lato">
+                Potenciamos los sistemas existentes mediante integraciones eficientes que conectan eCommerce, CRM y automatizaciones de workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* SERVICIOS */}
+      <section className="py-24 bg-[#0068ca] text-center text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat mb-16">
+            Soluciones Especializadas
+          </h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* Card 1 */}
+            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-bold font-montserrat mb-4">Integraciones Web & Automatizaciones</h3>
+              <p className="text-gray-700 font-lato mb-6">
+                Conectamos CRMs, plataformas de eCommerce y sistemas externos con APIs seguras, optimizando los procesos comerciales de nuestros clientes.
+              </p>
+              <Link href="/services#integraciones" className="text-[#0068ca] font-bold hover:underline inline-block">
+                Ver más
+              </Link>
+            </div>
+            {/* Card 2 */}
+            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-bold font-montserrat mb-4">CMS & Desarrollo Backend</h3>
+              <p className="text-gray-700 font-lato mb-6">
+                Implementamos soluciones a medida sobre plataformas líderes como Shopify, WooCommerce y WordPress, combinando estabilidad con flexibilidad.
+              </p>
+              <Link href="/services#cms" className="text-[#0068ca] font-bold hover:underline inline-block">
+                Ver más
+              </Link>
+            </div>
+            {/* Card 3 */}
+            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-bold font-montserrat mb-4">Lead Generation Orgánica</h3>
+              <p className="text-gray-700 font-lato mb-6">
+                Diseñamos sistemas de prospección orgánica integrados a CRM, optimizando la captación, el nurturing y el cierre de oportunidades comerciales.
+              </p>
+              <Link href="/services#leadgen" className="text-[#0068ca] font-bold hover:underline inline-block">
+                Ver más
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white text-center">
+      {/* CTA FINAL */}
+      <section className="py-24 bg-gray-900 text-center text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-gray-900">Contáctanos</h2>
-          <p className="text-lg text-gray-700 mt-4">
-            Estamos listos para ayudarte con tu próximo proyecto. ¡Hablemos!
+          <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat mb-6">
+            ¿Listo para escalar tu infraestructura digital?
+          </h2>
+          <p className="text-lg font-lato max-w-2xl mx-auto mb-10">
+            Construyamos juntos soluciones que conecten tecnología, procesos y resultados de negocio reales.
           </p>
-          <a
-            href="/contact"
-            className="mt-6 inline-block bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-green-700"
+          <div className="mt-8">
+            <Link
+              href="https://meetings.hubspot.com/apalmieri-paso"
+              className="bg-[#0068ca] hover:bg-[#0050a3] text-white font-bold py-4 px-10 rounded-lg transition-all inline-block"
+            >
+              Contactar
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CARROUSEL DE LOGOS DE CLIENTES */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-2">
+          <Swiper
+            modules={[Autoplay]}
+            slidesPerView={2}
+            spaceBetween={20}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            breakpoints={{
+              640: { slidesPerView: 3 },
+              768: { slidesPerView: 5 },
+              1024: { slidesPerView: 6 },
+            }}
+            loop={true}
           >
-            Contacto
-          </a>
+            <SwiperSlide>
+              <div className="flex justify-center">
+                <Image src="/axiacore.png" alt="Axiacore Logo" width={75} height={40} className="object-contain" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center">
+                <Image src="/seven.webp" alt="Seven Logo" width={75} height={40} className="object-contain" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center">
+                <Image src="/alaxs.png" alt="Alaxs Logo" width={75} height={40} className="object-contain" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center">
+                <Image src="/shakeagain.png" alt="Shake Again Logo" width={75} height={40} className="object-contain" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center">
+                <Image src="/atencion.webp" alt="Grupo Atención Logo" width={75} height={40} className="object-contain" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center">
+                <Image src="/logo-emergencias.png" alt="Emergencias Logo" width={75} height={40} className="object-contain" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center">
+                <Image src="/Proyecto nuevo (1).webp" alt="310 Nutrition Logo" width={75} height={40} className="object-contain" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex justify-center">
+                <Image src="/Proyecto nuevo.webp" alt="Colorshop Logo" width={75} height={40} className="object-contain" />
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
     </>
