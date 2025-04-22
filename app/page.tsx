@@ -317,12 +317,12 @@ export default function Home() {
             </SwiperSlide>
             <SwiperSlide>
               <div className="flex justify-center">
-                <Image src="/shakeagain.png" alt="Shake Again Logo" width={75} height={40} className="object-contain" />
+                <Image src="/shakeagain.png" alt="Shake Again Logo" width={55} height={28} className="object-contain" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="flex justify-center">
-                <Image src="/atencion.webp" alt="Grupo Atención Logo" width={75} height={40} className="object-contain" />
+                <Image src="/atencion.webp" alt="Grupo Atención Logo" width={55} height={28} className="object-contain" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
@@ -332,12 +332,12 @@ export default function Home() {
             </SwiperSlide>
             <SwiperSlide>
               <div className="flex justify-center">
-                <Image src="/Proyecto nuevo (1).webp" alt="310 Nutrition Logo" width={75} height={40} className="object-contain" />
+                <Image src="/Proyecto nuevo (1).webp" alt="310 Nutrition Logo" width={55} height={28} className="object-contain" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="flex justify-center">
-                <Image src="/Proyecto nuevo.webp" alt="Colorshop Logo" width={75} height={40} className="object-contain" />
+                <Image src="/Proyecto nuevo.webp" alt="Colorshop Logo" width={55} height={28} className="object-contain" />
               </div>
             </SwiperSlide>
           </Swiper>

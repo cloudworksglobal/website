@@ -1,103 +1,118 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function Home() {
+export default function Services() {
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="relative bg-white py-20">
-        <div className="container mx-auto px-4 flex flex-col items-center text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight font-montserrat mb-4">
-            Infraestructura Digital para Impulsar Ventas
+      {/* Hero Services */}
+      <section className="bg-blue-50 py-24 text-center">
+        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="container mx-auto px-4">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            Servicios para Escalar tu Negocio
           </h1>
-          <p className="text-lg text-gray-600 mt-2 mb-6 max-w-2xl font-lato">
-            Implementamos plataformas web, automatizaciones y sistemas de captación de leads, integrando procesos comerciales para lograr eficiencia, escalabilidad y resultados reales.
-          </p>
-          <Link href="https://meetings.hubspot.com/apalmieri-paso" className="bg-[#0068ca] hover:bg-[#0050a3] text-white font-bold py-3 px-8 rounded-lg transition-all">
-            Agendar una llamada
-          </Link>
-          <div className="mt-12 w-full max-w-4xl">
-            <Image src="/hero.webp" alt="Infraestructura Digital" width={1200} height={800} className="rounded-2xl shadow-md" />
-          </div>
-        </div>
-      </section>
-
-      {/* NUESTRO MÉTODO */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-12">
-            Nuestra Filosofía de Trabajo
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all">
-              <h3 className="text-2xl font-bold text-[#0068ca] mb-4">Integraciones & APIs</h3>
-              <p className="text-gray-700 font-lato mb-4">
-                Implementamos integraciones inteligentes mediante APIs RESTful y Webhooks para conectar CRMs, ERPs y plataformas de eCommerce, garantizando flujos de información estables y escalables.
-              </p>
-              <Image src="/integracionweb.png" alt="Integraciones y APIs" width={600} height={400} className="rounded-xl mx-auto" />
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all">
-              <h3 className="text-2xl font-bold text-[#0068ca] mb-4">Arquitectura & Performance</h3>
-              <p className="text-gray-700 font-lato mb-4">
-                Diseñamos arquitecturas modulares, enfocadas en rapidez de carga, buenas prácticas SEO, lazy loading de recursos e infraestructura en servidores optimizados.
-              </p>
-              <Image src="/performance.webp" alt="Performance Optimization" width={600} height={400} className="rounded-xl mx-auto" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* NUESTROS SERVICIOS */}
-      <section className="py-20 bg-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-12">
-            Nuestras Especialidades
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Servicio 1 */}
-            <div className="p-8 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition-all">
-              <Image src="/cms.webp" alt="CMS y eCommerce" width={400} height={300} className="rounded-lg mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-gray-900 font-montserrat">CMS & eCommerce</h3>
-              <p className="text-gray-600 mt-4 font-lato">
-                Desarrollo en Shopify, WordPress y WooCommerce, enfocados en escalabilidad, optimización de rendimiento y maximización de conversiones.
-              </p>
-            </div>
-            {/* Servicio 2 */}
-            <div className="p-8 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition-all">
-              <Image src="/crm.webp" alt="CRM & Leads" width={400} height={300} className="rounded-lg mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-gray-900 font-montserrat">Lead Generation Orgánica</h3>
-              <p className="text-gray-600 mt-4 font-lato">
-                Implementación de CRM y captación orgánica de oportunidades comerciales, sin dependencias de campañas pagas.
-              </p>
-            </div>
-            {/* Servicio 3 */}
-            <div className="p-8 bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition-all">
-              <Image src="/itidigital.webp" alt="Infraestructura Digital" width={400} height={300} className="rounded-lg mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-gray-900 font-montserrat">Infraestructura Digital</h3>
-              <p className="text-gray-600 mt-4 font-lato">
-                Diseño y gestión de sistemas de integración web, bases de datos, APIs y servidores cloud escalables.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="py-20 bg-[#0068ca] text-center text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat">
-            ¿Listo para construir tu infraestructura comercial?
-          </h2>
-          <p className="text-lg mt-6 max-w-2xl mx-auto font-lato">
-            Trabajemos juntos en tu captación de leads, automatización de procesos y expansión digital.
+          <p className="text-lg text-gray-700 mt-6 max-w-3xl mx-auto">
+            Integramos soluciones de CRM, automatización de procesos de ventas, integraciones de sistemas y desarrollo a medida para que tu empresa crezca de manera eficiente.
           </p>
           <div className="mt-8">
-            <Link href="https://meetings.hubspot.com/apalmieri-paso" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-lg transition-all">
-              Agendar una llamada
-            </Link>
+            <a
+              href="https://meetings.hubspot.com/apalmieri-paso"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg transition"
+            >
+              Agenda tu reunión
+            </a>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Servicios Destacados */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-4xl font-bold text-gray-900 text-center mb-16">
+            Soluciones Especializadas
+          </motion.h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "CRM a Medida", desc: "Desarrollamos CRMs personalizados que potencian tu equipo comercial, automatizan seguimientos y maximizan las conversiones." },
+              { title: "Automatización de Procesos", desc: "Eliminá tareas repetitivas. Automatizamos cotizaciones, seguimientos y reportes para que vendas más en menos tiempo." },
+              { title: "Integraciones & APIs", desc: "Conectamos tus sistemas ERP, eCommerce y CRM para lograr una visión 360° de tu negocio y una operativa eficiente." }
+            ].map((service, idx) => (
+              <motion.div key={idx} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 + idx * 0.2 }} className="flex flex-col justify-between p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all text-center h-full">
+                <div>
+                  <h3 className="text-2xl font-bold text-blue-700 mb-4">{service.title}</h3>
+                  <p className="text-gray-600 mb-6">{service.desc}</p>
+                </div>
+                <a
+                  href="https://meetings.hubspot.com/apalmieri-paso"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  Agenda tu reunión
+                </a>
+              </motion.div>
+            ))}
           </div>
         </div>
+      </section>
+
+      {/* Beneficios del Servicio */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-4xl font-bold text-gray-900 text-center mb-16">
+            Beneficios para tu Negocio
+          </motion.h2>
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {[
+              { title: "Optimización de Ventas", desc: "Automatizá tu proceso comercial para aumentar tasas de conversión y disminuir tiempos de ciclo." },
+              { title: "Datos Centralizados", desc: "Accedé a toda la información de clientes y operaciones en un solo lugar, en tiempo real." },
+              { title: "Escalabilidad de Procesos", desc: "Diseñamos sistemas modulares que acompañan tu crecimiento de forma ágil." },
+              { title: "Integración Inteligente", desc: "Unificamos herramientas de marketing, ventas y servicio al cliente para un ecosistema eficiente." }
+            ].map((benefit, idx) => (
+              <motion.div key={idx} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 + idx * 0.2 }} className="bg-white p-6 rounded-xl shadow text-center h-full flex flex-col justify-center">
+                <h3 className="text-2xl font-bold text-blue-700 mb-2">{benefit.title}</h3>
+                <p className="text-gray-600 mb-6">{benefit.desc}</p>
+                <a
+                  href="https://meetings.hubspot.com/apalmieri-paso"
+                  className="text-blue-600 font-semibold hover:underline"
+                >
+                  Agenda tu reunión
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Logo Software Factory Section */}
+      <section className="py-24 bg-blue-50 text-center">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="container mx-auto px-6">
+          <Image
+            src="/softwarefactory.png"
+            alt="Software Factory Logo"
+            width={400}
+            height={400}
+            className="mx-auto"
+          />
+        </motion.div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-blue-600 text-center text-white">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-6">
+            ¿Querés transformar tu operación comercial?
+          </h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
+            Agendá una consulta gratuita y descubrí cómo podemos escalar tus ventas y procesos con soluciones hechas a medida.
+          </p>
+          <a
+            href="https://meetings.hubspot.com/apalmieri-paso"
+            className="bg-white text-blue-600 font-bold py-4 px-10 rounded-lg hover:bg-gray-100 transition"
+          >
+            Agenda tu reunión
+          </a>
+        </motion.div>
       </section>
     </>
   );
