@@ -9,26 +9,37 @@ import "swiper/css/autoplay";
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="bg-gray-100 py-24 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight font-montserrat">
-            Infraestructura Digital para Impulsar Ventas
-          </h1>
-          <p className="text-lg text-gray-700 mt-8 max-w-2xl mx-auto font-lato">
-            Implementamos plataformas web, automatizaciones y sistemas de captación de leads, integrando procesos comerciales para lograr eficiencia, escalabilidad y resultados reales.
-          </p>
-          <div className="mt-10">
-            <Link
-              href="https://meetings.hubspot.com/apalmieri-paso"
-              className="bg-[#0068ca] hover:bg-[#0050a3] text-white font-bold py-3 px-8 rounded-lg transition-all inline-block"
-            >
-              Agendar una llamada
-            </Link>
+      {/* Hero Services */}
+      <section className="bg-gray-100 py-24">
+        <div className="container mx-auto px-6 grid md:grid-cols-2 items-center gap-10">
+          <div className="text-center md:text-left">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+              Infraestructura Digital para Impulsar Ventas
+            </h1>
+            <p className="text-lg text-gray-700 mt-6 max-w-2xl">
+              Implementamos plataformas web, automatizaciones y sistemas de captación de leads, integrando procesos comerciales para lograr eficiencia, escalabilidad y resultados reales.
+            </p>
+            <div className="mt-10">
+              <Link
+                href="https://meetings.hubspot.com/apalmieri-paso"
+                className="bg-[#0068ca] hover:bg-[#0050a3] text-white font-bold py-3 px-8 rounded-lg transition-all inline-block"
+              >
+                Agendar una llamada
+              </Link>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <Image
+              src="/hero.webp"
+              alt="Infraestructura Digital"
+              width={500}
+              height={400}
+              className="rounded-2xl shadow-xl object-cover hover:scale-105 transition-transform"
+            />
           </div>
         </div>
       </section>
-
+      
       {/* FILOSOFÍA DE TRABAJO */}
       <section className="py-24 bg-white text-center">
         <div className="container mx-auto px-4">
