@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   CheckCircleIcon,
   Cog6ToothIcon,
@@ -15,82 +16,18 @@ const Servicio = ({ title, subtitle, description, features, icon: Icon }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <>
-      {/* Hero Services */}
-      <section className="bg-blue-50 py-24 text-center">
-        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="container mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-            Servicios para Escalar tu Negocio
-          </h1>
-          <p className="text-lg text-gray-700 mt-6 max-w-3xl mx-auto">
-            Integramos soluciones de CRM, automatización de procesos de ventas, integraciones de sistemas y desarrollo a medida para que tu empresa crezca de manera eficiente.
-          </p>
-          <div className="mt-8">
-            <a
-              href="https://meetings.hubspot.com/apalmieri-paso"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg transition"
-            >
-              Agenda tu reunión
-            </a>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Servicios Destacados */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-4xl font-bold text-gray-900 text-center mb-16">
-            Soluciones Especializadas
-          </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col justify-between p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all text-center h-full">
-              <div>
-                <h3 className="text-2xl font-bold text-blue-700 mb-4">CRM a Medida</h3>
-                <p className="text-gray-600 mb-6">
-                  Desarrollamos CRMs personalizados que potencian tu equipo comercial, automatizan seguimientos y maximizan las conversiones.
-                </p>
-              </div>
-              <Link
-                href="/services/crm-a-medida"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Ver más
-              </Link>
-            </motion.div>
-
-            {/* Card 2 */}
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="flex flex-col justify-between p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all text-center h-full">
-              <div>
-                <h3 className="text-2xl font-bold text-blue-700 mb-4">Automatización de Procesos</h3>
-                <p className="text-gray-600 mb-6">
-                  Eliminá tareas repetitivas. Automatizamos cotizaciones, seguimientos y reportes para que vendas más en menos tiempo.
-                </p>
-              </div>
-              <a
-                href="https://meetings.hubspot.com/apalmieri-paso"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Agenda tu reunión
-              </a>
-            </motion.div>
-
-            {/* Card 3 - con el href corregido */}
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="flex flex-col justify-between p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all text-center h-full">
-              <div>
-                <h3 className="text-2xl font-bold text-blue-700 mb-4">Integraciones & APIs</h3>
-                <p className="text-gray-600 mb-6">
-                  Conectamos tus sistemas ERP, eCommerce y CRM para lograr una visión 360° de tu negocio y una operativa eficiente.
-                </p>
-              </div>
-              <Link
-                href="/services/crm-a-medida"
-                className="text-blue-600 font-semibold hover:underline"
-              >
-                Ver más
-              </Link>
-            </motion.div>
-          </div>
+    <motion.div
+      whileHover={{ scale: 1.03, rotate: 0.5 }}
+      transition={{ duration: 0.3 }}
+      className="bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition-all group relative overflow-hidden"
+    >
+      <div className="flex items-center gap-4 mb-4">
+        <div className="p-3 bg-blue-100 rounded-full group-hover:scale-110 transition">
+          <Icon className="h-6 w-6 text-blue-600" />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-blue-700 group-hover:text-blue-800">{title}</h3>
+          <p className="text-sm text-gray-500">{subtitle}</p>
         </div>
       </div>
       <motion.p
