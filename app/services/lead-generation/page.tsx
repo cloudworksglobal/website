@@ -10,7 +10,7 @@ import {
 import type { IconType } from "react-icons";
 import React from "react";
 
-const featuresLead: { icon: IconType; title: string; desc: string }[] = [
+const features: { icon: IconType; title: string; desc: string }[] = [
   {
     icon: FaUserPlus,
     title: "Captación Multicanal",
@@ -36,6 +36,7 @@ const featuresLead: { icon: IconType; title: string; desc: string }[] = [
 export default function LeadGeneration() {
   return (
     <main className="bg-white text-gray-900 font-sans">
+      {/* Intro */}
       <section className="py-24 px-6 md:px-16 text-center bg-gradient-to-br from-green-50 to-white">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -52,9 +53,10 @@ export default function LeadGeneration() {
         </motion.div>
       </section>
 
+      {/* Capacidades */}
       <section className="py-24 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
-          {featuresLead.map((item, idx) => (
+          {features.map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -74,6 +76,7 @@ export default function LeadGeneration() {
         </div>
       </section>
 
+      {/* Cómo lo hacemos */}
       <section className="py-24 bg-gray-50 px-6 md:px-16">
         <div className="max-w-5xl mx-auto">
           <motion.h2
@@ -107,6 +110,7 @@ export default function LeadGeneration() {
         </div>
       </section>
 
+      {/* Casos */}
       <section className="py-24 px-6 md:px-16 bg-white">
         <div className="max-w-5xl mx-auto space-y-10">
           <h2 className="text-3xl font-bold text-center mb-6">Implementaciones</h2>
@@ -131,6 +135,7 @@ export default function LeadGeneration() {
         </div>
       </section>
 
+      {/* Cierre */}
       <section className="py-20 text-center bg-gradient-to-r from-green-50 to-white">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-lg text-gray-700">
