@@ -83,7 +83,7 @@ export default function Home() {
               <p className="text-gray-700 font-lato mb-6">
                 Conectamos CRMs, plataformas de eCommerce y sistemas externos con APIs seguras, optimizando los procesos comerciales de nuestros clientes.
               </p>
-              <Link href="/services#crm-a-medida" className="text-[#0068ca] font-bold hover:underline inline-block">
+              <Link href="/services/crm-a-medida" className="text-[#0068ca] font-bold hover:underline inline-block">
                 Ver más
               </Link>
             </div>
@@ -93,7 +93,7 @@ export default function Home() {
               <p className="text-gray-700 font-lato mb-6">
                 Implementamos soluciones a medida sobre plataformas líderes como Shopify, WooCommerce y WordPress, combinando estabilidad con flexibilidad.
               </p>
-              <Link href="/services#desarrollo-backend" className="text-[#0068ca] font-bold hover:underline inline-block">
+              <Link href="/services/desarrollo-backend" className="text-[#0068ca] font-bold hover:underline inline-block">
                 Ver más
               </Link>
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
               <p className="text-gray-700 font-lato mb-6">
                 Diseñamos sistemas de prospección orgánica integrados a CRM, optimizando la captación, el nurturing y el cierre de oportunidades comerciales.
               </p>
-              <Link href="/services#lead-generation" className="text-[#0068ca] font-bold hover:underline inline-block">
+              <Link href="/services/lead-generation" className="text-[#0068ca] font-bold hover:underline inline-block">
                 Ver más
               </Link>
             </div>
