@@ -10,13 +10,7 @@ import {
 import type { IconType } from "react-icons";
 import React from "react";
 
-type FeatureItem = {
-  icon: IconType;
-  title: string;
-  desc: string;
-};
-
-const features: FeatureItem[] = [
+const featuresLead: { icon: IconType; title: string; desc: string }[] = [
   {
     icon: FaUserPlus,
     title: "Captación Multicanal",
@@ -42,7 +36,6 @@ const features: FeatureItem[] = [
 export default function LeadGeneration() {
   return (
     <main className="bg-white text-gray-900 font-sans">
-      {/* Intro */}
       <section className="py-24 px-6 md:px-16 text-center bg-gradient-to-br from-green-50 to-white">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -59,10 +52,9 @@ export default function LeadGeneration() {
         </motion.div>
       </section>
 
-      {/* Capacidades */}
       <section className="py-24 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-center">
-          {features.map((item, idx) => (
+          {featuresLead.map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -71,12 +63,10 @@ export default function LeadGeneration() {
               viewport={{ once: true }}
               className="bg-green-50 p-6 rounded-xl shadow-md"
             >
-           {React.createElement(item.icon, {
-  size: 40,
-  className: "text-green-600 mx-auto mb-4"
-} as any)}
-
-
+              {React.createElement(item.icon, {
+                size: 40,
+                className: "text-green-600 mx-auto mb-4",
+              })}
               <h3 className="text-xl font-bold text-green-700 mb-2">{item.title}</h3>
               <p className="text-gray-700">{item.desc}</p>
             </motion.div>
@@ -84,7 +74,6 @@ export default function LeadGeneration() {
         </div>
       </section>
 
-      {/* Cómo lo hacemos */}
       <section className="py-24 bg-gray-50 px-6 md:px-16">
         <div className="max-w-5xl mx-auto">
           <motion.h2
@@ -118,7 +107,6 @@ export default function LeadGeneration() {
         </div>
       </section>
 
-      {/* Casos */}
       <section className="py-24 px-6 md:px-16 bg-white">
         <div className="max-w-5xl mx-auto space-y-10">
           <h2 className="text-3xl font-bold text-center mb-6">Implementaciones</h2>
@@ -143,7 +131,6 @@ export default function LeadGeneration() {
         </div>
       </section>
 
-      {/* Cierre */}
       <section className="py-20 text-center bg-gradient-to-r from-green-50 to-white">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-lg text-gray-700">

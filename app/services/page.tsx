@@ -9,7 +9,7 @@ import {
   LinkIcon,
   ChartBarIcon,
   CursorArrowRaysIcon,
-  WrenchScrewdriverIcon
+  WrenchScrewdriverIcon,
 } from "@heroicons/react/24/outline";
 
 const Servicio = ({ title, subtitle, description, features, icon: Icon }) => {
@@ -93,7 +93,7 @@ export default function Servicios() {
               "Alertas, recordatorios y reportes en tiempo real",
               "Integración con plataformas de email marketing",
               "Roles personalizados por usuario",
-              "Segmentación de clientes con etiquetas dinámicas"
+              "Segmentación de clientes con etiquetas dinámicas",
             ]}
           />
 
@@ -108,7 +108,7 @@ export default function Servicios() {
               "Flujos de trabajo personalizados",
               "Integración con Slack y CRMs externos",
               "Automatización de tareas de seguimiento",
-              "Condiciones lógicas en flujos multicanal"
+              "Condiciones lógicas en flujos multicanal",
             ]}
           />
 
@@ -123,7 +123,7 @@ export default function Servicios() {
               "Documentación clara y soporte técnico",
               "Single Sign-On (SSO) y autenticación OAuth",
               "Control de versiones en endpoints",
-              "Logs detallados y fallback ante errores"
+              "Logs detallados y fallback ante errores",
             ]}
           />
 
@@ -138,7 +138,7 @@ export default function Servicios() {
               "Lazy loading estratégico de componentes",
               "Optimización para LCP, FID, CLS",
               "Infraestructura autoescalable en Vercel o AWS",
-              "Métricas visualizadas desde consola central"
+              "Métricas visualizadas desde consola central",
             ]}
           />
 
@@ -153,7 +153,7 @@ export default function Servicios() {
               "Layouts adaptativos para ecommerce",
               "Testing de conversión A/B integrado",
               "Carga progresiva y priorización visual",
-              "Accesibilidad e internacionalización"
+              "Accesibilidad e internacionalización",
             ]}
           />
 
@@ -168,7 +168,7 @@ export default function Servicios() {
               "Cobertura automatizada en CI/CD",
               "Análisis de performance Lighthouse",
               "Pruebas funcionales con usuarios reales",
-              "Reportes automáticos para bugs y coverage"
+              "Reportes automáticos para bugs y coverage",
             ]}
           />
         </div>
@@ -180,7 +180,7 @@ export default function Servicios() {
             transition={{ duration: 0.6 }}
             className="inline-block bg-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg"
           >
-            <a href="#contacto">Contactanos para un diagnóstico gratuito</a>
+            <Link href="/contact">Contactanos para un diagnóstico gratuito</Link>
           </motion.div>
         </div>
       </div>
