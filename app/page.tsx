@@ -248,9 +248,9 @@ export default function Home() {
               <p className="text-gray-700 font-lato mb-6">
                 Conectamos CRMs, plataformas de eCommerce y sistemas externos con APIs seguras, optimizando los procesos comerciales de nuestros clientes.
               </p>
-              <Link href="/services#integraciones" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
+              <Link href="/services/crm-a-medida" className="text-blue-600 font-semibold hover:underline">
+  Ver más
+</Link>
             </div>
             {/* Card 2 */}
             <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
@@ -258,9 +258,9 @@ export default function Home() {
               <p className="text-gray-700 font-lato mb-6">
                 Implementamos soluciones a medida sobre plataformas líderes como Shopify, WooCommerce y WordPress, combinando estabilidad con flexibilidad.
               </p>
-              <Link href="/services#cms" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
+              <Link href="/services/desarrollo-backend" className="text-blue-600 font-semibold hover:underline">
+  Ver más
+</Link>
             </div>
             {/* Card 3 */}
             <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
@@ -268,9 +268,9 @@ export default function Home() {
               <p className="text-gray-700 font-lato mb-6">
                 Diseñamos sistemas de prospección orgánica integrados a CRM, optimizando la captación, el nurturing y el cierre de oportunidades comerciales.
               </p>
-              <Link href="/services#leadgen" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
+              <Link href="/services/lead-generation" className="text-blue-600 font-semibold hover:underline">
+  Ver más
+</Link>
             </div>
           </div>
         </div>
