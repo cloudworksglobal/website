@@ -1,39 +1,92 @@
 "use client";
 
+import { motion } from "framer-motion";
+import Link from "next/link";
+
 export default function InfraestructuraDigital() {
   return (
-    <section className="py-16 bg-white text-center">
-      <div className="container mx-auto px-4">
-        <h1 className="text-5xl font-bold text-gray-900 mb-8">
-          Infraestructura Digital: La Clave para Escalar Ventas en PyMEs
-        </h1>
-        <p className="text-lg text-gray-700 text-left max-w-3xl mx-auto mb-8">
-          En el entorno comercial actual, una infraestructura digital sólida no es un lujo: es una necesidad estratégica para las PyMEs. 
-          Muchos negocios sufren integraciones precarias, sistemas desconectados y procesos manuales que ralentizan su crecimiento.
-        </p>
-        <p className="text-lg text-gray-700 text-left max-w-3xl mx-auto mb-8">
-          En Cloudworks diseñamos soluciones modulares basadas en integraciones abiertas, automatizaciones inteligentes y herramientas de código abierto, evitando el costo de grandes licencias propietarias.
-        </p>
-        <p className="text-lg text-gray-700 text-left max-w-3xl mx-auto mb-8">
-          Implementamos integraciones entre CRMs, ERPs, eCommerce y plataformas de marketing utilizando tecnologías como APIs REST, automatizaciones en Python y soluciones low-code como Zapier y Make. 
-          Esto permite que cada empresa adapte su stack tecnológico de manera eficiente y escalable.
-        </p>
-        <p className="text-lg text-gray-700 text-left max-w-3xl mx-auto mb-8">
-          Además, aprovechamos la Inteligencia Artificial para optimizar flujos de trabajo, recomendando acciones comerciales basadas en datos reales. 
-          De esta manera, las PyMEs no solo automatizan procesos, sino que también mejoran su toma de decisiones estratégicas.
-        </p>
-        <p className="text-lg text-gray-700 text-left max-w-3xl mx-auto mb-8">
-          Apostar por una infraestructura digital adecuada significa no quedar atrapado en soluciones cerradas y costosas, sino construir un ecosistema tecnológico preparado para el crecimiento sostenido y adaptado a las necesidades reales del negocio.
-        </p>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-6 max-w-4xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-extrabold text-[#4A5D44] text-center mb-12 leading-tight"
+        >
+          Cómo Integramos Infraestructura Digital para 3 PyMEs Reales y Disparamos su Eficiencia Comercial
+        </motion.h1>
 
-        <div className="mt-10">
-          <a
+        {/* Introducción */}
+        <motion.p className="text-gray-700 text-lg leading-relaxed mb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+          Las PyMEs suelen depender de herramientas aisladas, integraciones manuales o procesos repetitivos. En Cloudworks, abordamos este problema construyendo infraestructuras digitales modulares y abiertas. A continuación, tres casos reales.
+        </motion.p>
+
+        {/* Caso 1 */}
+        <motion.div className="mb-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+          <h2 className="text-2xl font-bold text-[#4A5D44] mb-2">1. SomosReyes.com</h2>
+          <p className="text-gray-700 mb-2">
+            Integramos Shopify con su CRM interno y sistema de logística mediante APIs y automatizaciones custom con Node.js. Esto permitió:
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 mb-4">
+            <li>Reducir en un 60% las tareas manuales de soporte post-venta</li>
+            <li>Acelerar la actualización de stock en tiempo real</li>
+            <li>Automatizar el seguimiento de pedidos en WhatsApp Business</li>
+          </ul>
+        </motion.div>
+
+        {/* Caso 2 */}
+        <motion.div className="mb-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+          <h2 className="text-2xl font-bold text-[#4A5D44] mb-2">2. ALAXS Global</h2>
+          <p className="text-gray-700 mb-2">
+            Desarrollamos un dashboard de ventas que consolidaba datos de canales distintos (WooCommerce, Mercado Libre, facturación interna) usando Python + Google Sheets API.
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 mb-4">
+            <li>Unificación de datos comerciales en tiempo real</li>
+            <li>Reducción de errores humanos en reportes: -80%</li>
+            <li>Decisiones basadas en KPIs automáticos: ticket promedio, margen y devoluciones</li>
+          </ul>
+        </motion.div>
+
+        {/* Caso 3 */}
+        <motion.div className="mb-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
+          <h2 className="text-2xl font-bold text-[#4A5D44] mb-2">3. 310 Nutrition</h2>
+          <p className="text-gray-700 mb-2">
+            Automatizamos flujos entre Shopify, Klaviyo y herramientas internas de marketing para sincronizar descuentos, popups y registros de usuarios. Tecnologías: Liquid, Tailwind, Rebuy y API de descuentos.
+          </p>
+          <ul className="list-disc pl-6 text-gray-700 mb-4">
+            <li>+35% de eficiencia en actualización de promos y popups</li>
+            <li>Mejora del CTR en funnels de captura: +18%</li>
+            <li>Menor dependencia del equipo técnico para tareas operativas</li>
+          </ul>
+        </motion.div>
+
+        {/* Diagrama simple */}
+        <motion.div className="my-12" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.0 }}>
+          <h3 className="text-xl font-bold text-center mb-4">Infraestructura Modular Típica</h3>
+          <div className="flex flex-wrap justify-center gap-6">
+            <div className="bg-[#E9F0EA] rounded-xl px-4 py-2">Shopify</div>
+            <div className="bg-[#E9F0EA] rounded-xl px-4 py-2">CRM / ERP</div>
+            <div className="bg-[#E9F0EA] rounded-xl px-4 py-2">Klaviyo</div>
+            <div className="bg-[#E9F0EA] rounded-xl px-4 py-2">Zapier / Make</div>
+            <div className="bg-[#E9F0EA] rounded-xl px-4 py-2">Python Scripts</div>
+            <div className="bg-[#E9F0EA] rounded-xl px-4 py-2">Google Sheets / Dashboards</div>
+          </div>
+        </motion.div>
+
+        {/* CTA Final */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.3 }}
+        >
+          <Link
             href="/blog"
-            className="text-blue-600 font-bold hover:underline"
+            className="inline-block text-[#0068cc] font-semibold hover:underline transition"
           >
             ← Volver al Blog
-          </a>
-        </div>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
