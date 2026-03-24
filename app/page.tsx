@@ -2,455 +2,341 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 
 export default function Home() {
   return (
-    <>
-      {/* Hero Services */}
-      <section className="bg-gray-100 py-24">
-        <div className="container mx-auto px-6 grid md:grid-cols-2 items-center gap-10">
-          <div className="text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-              Infraestructura Digital para Impulsar Ventas
+    <div className="bg-[#020617] text-white selection:bg-[#49c5b6] selection:text-white">
+      
+      {/* HERO: RED NEURONAL & IA */}
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+        {/* Efecto de Fondo: Redes y Nodos */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+          <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-[#0068ca] rounded-full blur-[120px] opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-[#49c5b6] rounded-full blur-[120px] opacity-20"></div>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-block px-4 py-1 rounded-full border border-[#49c5b6]/30 bg-[#49c5b6]/10 text-[#49c5b6] text-sm font-mono mb-6 animate-bounce">
+              // AI & AUTOMATION ENGINE READY
+            </div>
+            <h1 className="text-6xl lg:text-8xl font-black tracking-tighter leading-none mb-8">
+              Infraestructura <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0068ca] via-[#49c5b6] to-white">
+                Autónoma
+              </span>
             </h1>
-            <p className="text-lg text-gray-700 mt-6 max-w-2xl">
-              Implementamos plataformas web, automatizaciones y sistemas de captación de leads, integrando procesos comerciales para lograr eficiencia, escalabilidad y resultados reales.
+            <p className="text-xl text-slate-400 max-w-lg leading-relaxed mb-10">
+              No solo hacemos webs. Construimos ecosistemas con **Python Scrips**, **IA Agents** e integraciones de **APIs críticas** para escalar inventarios y ventas sin intervención humana.
             </p>
-            <div className="mt-10">
-              <Link
-                href="https://meetings.hubspot.com/apalmieri-paso"
-                className="bg-[#0068ca] hover:bg-[#0050a3] text-white font-bold py-3 px-8 rounded-lg transition-all inline-block"
-              >
-                Agendar una llamada
+            <div className="flex flex-wrap gap-5">
+              <Link href="#automation" className="bg-white text-black hover:bg-[#49c5b6] hover:text-white font-bold py-4 px-10 rounded-xl transition-all duration-300">
+                Ver Ecosistemas
+              </Link>
+              <Link href="https://meetings.hubspot.com/apalmieri-paso" className="border border-slate-700 hover:border-[#0068ca] bg-slate-900/50 backdrop-blur-md py-4 px-10 rounded-xl transition-all">
+                Agendar Consultoría Técnica
               </Link>
             </div>
           </div>
-          <div className="flex justify-center">
-            <Image
-              src="/hero.webp"
-              alt="Infraestructura Digital"
-              width={500}
-              height={400}
-              className="rounded-2xl shadow-xl object-cover hover:scale-105 transition-transform"
+
+          {/* Visual de Código / IA */}
+          <div className="hidden lg:block relative">
+            <div className="bg-slate-900/80 border border-slate-700 rounded-2xl p-6 font-mono text-sm shadow-2xl backdrop-blur-xl">
+              <div className="flex gap-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="ml-4 text-slate-500">inventory_sync.py</span>
+              </div>
+              <p className="text-blue-400">import <span className="text-white">tensorflow as tf</span></p>
+              <p className="text-blue-400">from <span className="text-white">cloudworks_ai import AutomationEngine</span></p>
+              <p className="text-slate-500 mt-4"># Iniciando análisis de inventario B2B</p>
+              <p className="text-green-400">engine = AutomationEngine(api_key="CW-992")</p>
+              <p className="text-green-400">engine.sync_stock(provider="Shopify", erp="SAP")</p>
+              <p className="text-white mt-4 animate-pulse">{`> Processing neural weights... 98%`}</p>
+            </div>
+            {/* Logo de fondo sutil */}
+            <div className="absolute -bottom-10 -right-10 opacity-20 grayscale">
+               <Image src="/cloudworks ms-icon-310x310.png" width={200} height={200} alt="Logo Background" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN: CORE ENGINE (TECNOLOGÍAS WEB) */}
+<section className="py-24 bg-black relative overflow-hidden border-t border-slate-800">
+  <div className="container mx-auto px-6">
+    <div className="text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter">
+        Nuestra <span className="text-[#49c5b6]">Stack de Alto Rendimiento</span>
+      </h2>
+      <p className="text-slate-400 max-w-2xl mx-auto">
+        No elegimos herramientas al azar. Utilizamos el estándar de oro de la industria para garantizar escalabilidad, seguridad y velocidad extrema.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-80 hover:opacity-100 transition-opacity">
+      {[
+        { name: "Next.js", url: "https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg" },
+        { name: "React", url: "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" },
+        { name: "Shopify Plus", url: "https://www.vectorlogo.zone/logos/shopify/shopify-icon.svg" },
+        { name: "HubSpot", url: "https://www.vectorlogo.zone/logos/hubspot/hubspot-icon.svg" },
+        { name: "WordPress", url: "https://www.vectorlogo.zone/logos/wordpress/wordpress-icon.svg" },
+      ].map((tech, i) => (
+        <div key={i} className="flex flex-col items-center group cursor-default">
+          <div className="w-16 h-16 mb-4 p-3 bg-slate-900 rounded-2xl border border-slate-800 group-hover:border-[#49c5b6] transition-all duration-300 flex items-center justify-center">
+            <Image 
+              src={tech.url} 
+              alt={tech.name} 
+              width={64} 
+              height={64} 
+              className="grayscale group-hover:grayscale-0 transition-all object-contain" 
             />
           </div>
+          <span className="text-[10px] font-mono text-slate-500 group-hover:text-white uppercase tracking-widest text-center">{tech.name}</span>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* SECCIÓN: AUDITORÍA DE PAGE SPEED & OPTIMIZACIÓN */}
+<section className="py-32 bg-[#020617] relative">
+  <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+    
+    {/* Visual de Performance (Dashboard) */}
+    <div className="relative">
+      <div className="absolute -inset-4 bg-gradient-to-r from-[#0068ca] to-[#49c5b6] rounded-[2.5rem] blur-2xl opacity-10"></div>
+      <div className="relative bg-slate-900 border border-slate-800 p-8 rounded-[2rem] shadow-2xl">
+        <div className="flex justify-between items-end mb-10">
+          <div>
+            <p className="text-[#49c5b6] font-mono text-xs mb-1 uppercase tracking-tighter">// Performance Audit</p>
+            <h3 className="text-2xl font-bold text-white">Lighthouse Vitals</h3>
+          </div>
+          <div className="text-right">
+             <span className="text-5xl font-black text-[#49c5b6]">100</span>
+             <p className="text-[10px] text-slate-500 uppercase tracking-widest">Score</p>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {[
+            { label: "Largest Contentful Paint (LCP)", value: "0.8s", width: "98%" },
+            { label: "First Input Delay (FID)", value: "12ms", width: "99%" },
+            { label: "Cumulative Layout Shift (CLS)", value: "0.01", width: "97%" },
+          ].map((metric, idx) => (
+            <div key={idx}>
+              <div className="flex justify-between text-xs mb-2 font-mono">
+                <span className="text-slate-300">{metric.label}</span>
+                <span className="text-[#49c5b6]">{metric.value}</span>
+              </div>
+              <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-[#0068ca] to-[#49c5b6]" 
+                  style={{ width: metric.width }}
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-10 p-4 bg-black/50 border border-slate-800 rounded-xl font-mono text-[10px] text-slate-500 italic">
+          <p>{`> node audit --url cloudworksglobal.tech --optimize`}</p>
+          <p>{`> Status: Optimization complete. SEO indexing 100%.`}</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Texto de Auditoría */}
+    <div className="text-left">
+      <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight tracking-tighter text-white">
+        No permitas que una <br /> 
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0068ca] to-[#49c5b6]">web lenta</span> mate tus ventas.
+      </h2>
+      <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+        Cada milisegundo cuenta. En <strong>Cloudworks Global</strong>, realizamos auditorías profundas de <strong>Core Web Vitals</strong>. Optimizamos el renderizado para que tu sitio cargue instantáneamente.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+        <div className="flex items-center gap-3 text-slate-300 font-mono text-xs">
+          <span className="text-[#49c5b6]">✔</span> SEO Técnico Avanzado
+        </div>
+        <div className="flex items-center gap-3 text-slate-300 font-mono text-xs">
+          <span className="text-[#49c5b6]">✔</span> Image Compression AI
+        </div>
+        <div className="flex items-center gap-3 text-slate-300 font-mono text-xs">
+          <span className="text-[#49c5b6]">✔</span> Code Splitting
+        </div>
+        <div className="flex items-center gap-3 text-slate-300 font-mono text-xs">
+          <span className="text-[#49c5b6]">✔</span> CDN Edge Delivery
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{/* SECCIÓN: DATA ARCHITECTURE & AUTOMATION BLUEPRINT */}
+<section className="py-24 bg-black relative border-t border-slate-800/50">
+  <div className="container mx-auto px-6">
+    <div className="flex flex-col lg:flex-row items-center gap-16">
       
-      {/* FILOSOFÍA DE TRABAJO */}
-<section className="py-24 bg-white text-center" id="filosofia-trabajo">
-  <div className="container mx-auto px-4">
-    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-12">
-      Nuestra Filosofía de Trabajo
-    </h2>
-
-    <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-      <div className="flex flex-col items-center text-center px-4">
-        <svg className="w-14 h-14 text-[#0068ca] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M12 4v16m8-8H4" />
-        </svg>
-        <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat mb-2">Integraciones & APIs</h3>
-        <p className="text-gray-700 font-lato">
-          Implementamos integraciones inteligentes mediante APIs RESTful y Webhooks para conectar CRMs, ERPs y plataformas.
+      {/* Texto Descriptivo */}
+      <div className="lg:w-1/3">
+        <div className="w-12 h-1 bg-[#49c5b6] mb-6"></div>
+        <h2 className="text-4xl font-black mb-6 tracking-tighter text-white">
+          Arquitectura de <br />
+          <span className="text-[#0068ca]">Datos Conectados</span>
+        </h2>
+        <p className="text-slate-400 mb-8 leading-relaxed">
+          No creamos silos de información. Diseñamos <strong>pipelines de datos</strong> que sincronizan tu inventario en Shopify con tu ERP, mientras nuestra IA analiza el comportamiento de compra para disparar automatizaciones en HubSpot.
         </p>
-      </div>
-
-      <div className="flex flex-col items-center text-center px-4">
-        <svg className="w-14 h-14 text-[#0068ca] mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat mb-2">Automatización de Datos</h3>
-        <p className="text-gray-700 font-lato">
-          Automatizamos flujos de información clave para mejorar la eficiencia operativa y la trazabilidad del negocio.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-{/* SERVICIOS */}
-<section className="py-24 bg-[#0068ca] text-center text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat mb-16">
-            Soluciones Especializadas
-          </h2>
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Card 1 */}
-            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
-              <h3 className="text-2xl font-bold font-montserrat mb-4">Integraciones Web & Automatizaciones</h3>
-              <p className="text-gray-700 font-lato mb-6">
-                Conectamos CRMs, plataformas de eCommerce y sistemas externos con APIs seguras, optimizando los procesos comerciales de nuestros clientes.
-              </p>
-              <Link href="/services/crm-a-medida" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
-            </div>
-            {/* Card 2 */}
-            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
-              <h3 className="text-2xl font-bold font-montserrat mb-4">CMS & Desarrollo Backend</h3>
-              <p className="text-gray-700 font-lato mb-6">
-                Implementamos soluciones a medida sobre plataformas líderes como Shopify, WooCommerce y WordPress, combinando estabilidad con flexibilidad.
-              </p>
-              <Link href="/services/desarrollo-backend" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
-            </div>
-            {/* Card 3 */}
-            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
-              <h3 className="text-2xl font-bold font-montserrat mb-4">Lead Generation Orgánica</h3>
-              <p className="text-gray-700 font-lato mb-6">
-                Diseñamos sistemas de prospección orgánica integrados a CRM, optimizando la captación, el nurturing y el cierre de oportunidades comerciales.
-              </p>
-              <Link href="/services/lead-generation" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
-            </div>
+        <div className="space-y-4">
+          <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+            <h4 className="text-[#49c5b6] font-bold text-sm mb-1 uppercase tracking-widest">Inventory Sync</h4>
+            <p className="text-xs text-slate-500">Actualización en milisegundos vía Webhooks.</p>
+          </div>
+          <div className="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+            <h4 className="text-[#0068ca] font-bold text-sm mb-1 uppercase tracking-widest">AI Scoring</h4>
+            <p className="text-xs text-slate-500">Modelos predictivos para calificación de leads.</p>
           </div>
         </div>
-      </section>
+      </div>
 
+      {/* Diagrama Visual Estilo Tech */}
+      <div className="lg:w-2/3 w-full relative">
+        <div className="bg-[#020617] border border-slate-800 rounded-[2.5rem] p-8 lg:p-12 relative overflow-hidden shadow-3xl">
+          {/* Líneas de conexión animadas (CSS puro) */}
+          <div className="grid grid-cols-3 gap-4 lg:gap-8 relative z-10">
+            
+            {/* Columna 1: Captación */}
+            <div className="flex flex-col gap-6">
+              <div className="h-20 bg-slate-800/50 rounded-2xl border border-slate-700 flex items-center justify-center p-4 text-center">
+                <span className="text-[10px] font-mono text-slate-300">Traffic (Ads/SEO)</span>
+              </div>
+              <div className="h-20 bg-slate-800/50 rounded-2xl border border-slate-700 flex items-center justify-center p-4 text-center">
+                <span className="text-[10px] font-mono text-slate-300">Shopify / Web</span>
+              </div>
+            </div>
 
-      {/* CÓMO TRABAJAMOS */}
-      <section className="py-24 bg-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-16">
-            ¿Cómo trabajamos?
-          </h2>
-          <div className="grid md:grid-cols-4 gap-12 text-center">
-            {/* Step 1 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m0 14v2m0-6h6m2 4H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v5" />
-                </svg>
+            {/* Columna 2: El Cerebro (Tu Script) */}
+            <div className="flex flex-col justify-center">
+              <div className="h-40 bg-gradient-to-br from-[#0068ca] to-[#49c5b6] rounded-3xl flex flex-col items-center justify-center p-4 shadow-[0_0_30px_rgba(0,104,202,0.4)] animate-pulse">
+                <div className="w-10 h-10 bg-white/20 rounded-full mb-3 flex items-center justify-center">
+                   <span className="text-white text-xl font-bold">Py</span>
+                </div>
+                <span className="text-[10px] font-mono font-bold text-white uppercase tracking-tighter text-center">Cloudworks Engine</span>
+                <span className="text-[8px] font-mono text-white/70 mt-1">Logic & AI</span>
               </div>
-              <h3 className="text-xl font-bold font-montserrat mb-4">Análisis Técnico Comercial</h3>
-              <p className="text-gray-700 font-lato">
-                Entendemos las necesidades comerciales y analizamos los sistemas existentes para planificar una solución efectiva.
-              </p>
             </div>
-            {/* Step 2 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a4 4 0 00-8 0v2a4 4 0 008 0zm-9 4v1a3 3 0 006 0v-1a3 3 0 00-6 0z" />
-                </svg>
+
+            {/* Columna 3: Destinos */}
+            <div className="flex flex-col gap-6">
+              <div className="h-20 bg-slate-800/50 rounded-2xl border border-slate-700 flex items-center justify-center p-4 text-center">
+                <span className="text-[10px] font-mono text-slate-300">ERP / SAP Sync</span>
               </div>
-              <h3 className="text-xl font-bold font-montserrat mb-4">Arquitectura & Planificación</h3>
-              <p className="text-gray-700 font-lato">
-                Diseñamos arquitecturas flexibles y modulares, priorizando velocidad de implementación y escalabilidad a largo plazo.
-              </p>
-            </div>
-            {/* Step 3 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+              <div className="h-20 bg-slate-800/50 rounded-2xl border border-slate-700 flex items-center justify-center p-4 text-center">
+                <span className="text-[10px] font-mono text-slate-300">CRM / Hubspot</span>
               </div>
-              <h3 className="text-xl font-bold font-montserrat mb-4">Desarrollo & Testing</h3>
-              <p className="text-gray-700 font-lato">
-                Ejecutamos desarrollos frontend/backend y testeamos integraciones asegurando funcionalidad, estabilidad y rendimiento óptimo.
-              </p>
             </div>
-            {/* Step 4 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m4 0h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold font-montserrat mb-4">Implementación & Optimización</h3>
-              <p className="text-gray-700 font-lato">
-                Desplegamos soluciones de forma controlada, monitoreando resultados y proponiendo mejoras continuas basadas en métricas reales.
-              </p>
-            </div>
+
+          </div>
+          
+          {/* Fondo decorativo de red */}
+          <div className="absolute inset-0 opacity-5 pointer-events-none">
+            <svg width="100%" height="100%"><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>
           </div>
         </div>
-      </section>
-
-
-      {/* TECNOLOGÍAS QUE USAMOS */}
-<section className="py-24 bg-gray-50 text-center">
-  <div className="container mx-auto px-4">
-    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-16">
-      Tecnologías que impulsan nuestros proyectos
-    </h2>
-    <div className="grid grid-cols-4 md:grid-cols-7 gap-6 items-center justify-center">
-      {/* Next.js */}
-      <div className="flex flex-col items-center space-y-2">
-        <div className="w-10 h-10 md:w-16 md:h-16">
-          <Image src="https://www.vectorlogo.zone/logos/nextjs/nextjs-icon.svg" alt="Next.js" width={40} height={40} />
-        </div>
-        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">Next.js</p>
       </div>
 
-      {/* React */}
-      <div className="flex flex-col items-center space-y-2">
-        <div className="w-10 h-10 md:w-16 md:h-16">
-          <Image src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React" width={40} height={40} />
-        </div>
-        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">React</p>
-      </div>
-
-      {/* Shopify */}
-      <div className="flex flex-col items-center space-y-2">
-        <div className="w-10 h-10 md:w-16 md:h-16">
-          <Image src="https://www.vectorlogo.zone/logos/shopify/shopify-icon.svg" alt="Shopify" width={40} height={40} />
-        </div>
-        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">Shopify</p>
-      </div>
-
-      {/* WordPress */}
-      <div className="flex flex-col items-center space-y-2">
-        <div className="w-10 h-10 md:w-16 md:h-16">
-          <Image src="https://www.vectorlogo.zone/logos/wordpress/wordpress-icon.svg" alt="WordPress" width={40} height={40} />
-        </div>
-        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">WordPress</p>
-      </div>
-
-      {/* Node.js */}
-      <div className="flex flex-col items-center space-y-2">
-        <div className="w-10 h-10 md:w-16 md:h-16">
-          <Image src="https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg" alt="Node.js" width={40} height={40} />
-        </div>
-        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">Node.js</p>
-      </div>
-
-      {/* HubSpot */}
-      <div className="flex flex-col items-center space-y-2">
-        <div className="w-10 h-10 md:w-16 md:h-16">
-          <Image src="https://www.vectorlogo.zone/logos/hubspot/hubspot-icon.svg" alt="HubSpot" width={40} height={40} />
-        </div>
-        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">HubSpot</p>
-      </div>
-
-      {/* PHP */}
-      <div className="flex flex-col items-center space-y-2">
-        <div className="w-10 h-10 md:w-16 md:h-16">
-          <Image src="https://www.vectorlogo.zone/logos/php/php-icon.svg" alt="PHP" width={40} height={40} />
-        </div>
-        <p className="text-xs md:text-sm font-lato text-gray-700 mt-2">PHP</p>
-      </div>
     </div>
   </div>
 </section>
 
+      {/* SECCIÓN DE LOGROS: WORKFLOWS & DATA */}
+      <section id="automation" className="py-32 relative bg-[#020617]">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-3 gap-8">
+            
+            {/* Card 1: Workflows */}
+            <div className="p-8 rounded-3xl bg-gradient-to-b from-slate-800 to-transparent border border-slate-800 hover:border-[#49c5b6]/50 transition-all group">
+              <div className="w-14 h-14 bg-[#0068ca]/20 rounded-2xl flex items-center justify-center mb-6 text-[#49c5b6] group-hover:scale-110 transition-transform">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Workflows Dinámicos</h3>
+              <p className="text-slate-400 leading-relaxed">Diseñamos el flujo lógico desde la captación del lead hasta la facturación automática en el ERP.</p>
+              <ul className="mt-6 space-y-2 text-sm text-slate-500 font-mono">
+                <li>+ Hubspot / Salesforce Sync</li>
+                <li>+ Stripe Automation</li>
+              </ul>
+            </div>
 
-      {/* CÓMO TRABAJAMOS */}
-      <section className="py-24 bg-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-16">
-            ¿Cómo trabajamos?
-          </h2>
-          <div className="grid md:grid-cols-4 gap-12 text-center">
-            {/* Step 1 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m0 14v2m0-6h6m2 4H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v5" />
-                </svg>
+            {/* Card 2: AI Chatbots */}
+            <div className="p-8 rounded-3xl bg-gradient-to-b from-slate-800 to-transparent border border-slate-800 hover:border-[#49c5b6]/50 transition-all group">
+              <div className="w-14 h-14 bg-[#49c5b6]/20 rounded-2xl flex items-center justify-center mb-6 text-[#49c5b6] group-hover:scale-110 transition-transform">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
               </div>
-              <h3 className="text-xl font-bold font-montserrat mb-4">Análisis Técnico Comercial</h3>
-              <p className="text-gray-700 font-lato">
-                Entendemos las necesidades comerciales y analizamos los sistemas existentes para planificar una solución efectiva.
-              </p>
+              <h3 className="text-2xl font-bold mb-4">IA & Chatbots Propios</h3>
+              <p className="text-slate-400 leading-relaxed">Entrenamos modelos LLM con tu documentación interna para soporte técnico y ventas 24/7.</p>
+              <ul className="mt-6 space-y-2 text-sm text-slate-500 font-mono">
+                <li>+ RAG (Retrieval-Augmented)</li>
+                <li>+ WhatsApp Business API</li>
+              </ul>
             </div>
-            {/* Step 2 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a4 4 0 00-8 0v2a4 4 0 008 0zm-9 4v1a3 3 0 006 0v-1a3 3 0 00-6 0z" />
-                </svg>
+
+            {/* Card 3: Integraciones */}
+            <div className="p-8 rounded-3xl bg-gradient-to-b from-slate-800 to-transparent border border-slate-800 hover:border-[#49c5b6]/50 transition-all group">
+              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-[#49c5b6] group-hover:scale-110 transition-transform">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
               </div>
-              <h3 className="text-xl font-bold font-montserrat mb-4">Arquitectura & Planificación</h3>
-              <p className="text-gray-700 font-lato">
-                Diseñamos arquitecturas flexibles y modulares, priorizando velocidad de implementación y escalabilidad a largo plazo.
-              </p>
+              <h3 className="text-2xl font-bold mb-4">Docs & Auditoría API</h3>
+              <p className="text-slate-400 leading-relaxed">Documentación técnica robusta para asegurar que cada integración sea escalable y segura.</p>
+              <ul className="mt-6 space-y-2 text-sm text-slate-500 font-mono">
+                <li>+ Postman Collections</li>
+                <li>+ Swagger / OpenAPI</li>
+              </ul>
             </div>
-            {/* Step 3 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold font-montserrat mb-4">Desarrollo & Testing</h3>
-              <p className="text-gray-700 font-lato">
-                Ejecutamos desarrollos frontend/backend y testeamos integraciones asegurando funcionalidad, estabilidad y rendimiento óptimo.
-              </p>
-            </div>
-            {/* Step 4 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-[#0068ca] p-4 rounded-full mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m4 0h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold font-montserrat mb-4">Implementación & Optimización</h3>
-              <p className="text-gray-700 font-lato">
-                Desplegamos soluciones de forma controlada, monitoreando resultados y proponiendo mejoras continuas basadas en métricas reales.
-              </p>
-            </div>
+
           </div>
         </div>
       </section>
 
-      {/* BENEFICIOS DE CLOUDWORKS */}
-      <section className="py-24 bg-gray-50 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-montserrat mb-16">
-            ¿Por qué elegirnos?
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto text-left">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Entendimiento Comercial Real</h3>
-              <p className="text-gray-700 font-lato">
-                Conocemos a fondo las dinámicas comerciales de ventas B2B y B2C, orientando las implementaciones a resultados concretos de negocio.
-              </p>
+      {/* SECCIÓN DE "NERD POWER": TECH STACK DINÁMICO */}
+      <section className="py-24 bg-black/50">
+        <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl font-bold mb-16 text-slate-500 uppercase tracking-[0.3em]">Neural Stack & Partners</h2>
+            <div className="flex flex-wrap justify-center gap-12 grayscale opacity-40 hover:opacity-100 transition-opacity">
+                {/* Los logos que tenías pero más pequeños y elegantes */}
+                <span>Next.js</span>
+                <span>Python / FastAPI</span>
+                <span>OpenAI</span>
+                <span>Shopify Plus</span>
+                <span>AWS</span>
+                <span>Node.js</span>
             </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Expertise en Frontend Dinámico</h3>
-              <p className="text-gray-700 font-lato">
-                Creamos interfaces modernas, rápidas y optimizadas para performance, experiencia de usuario y escalabilidad en el tiempo.
-              </p>
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Tecnologías Probadas</h3>
-              <p className="text-gray-700 font-lato">
-                Apostamos a plataformas líderes como Shopify, WooCommerce, WordPress y Next.js, asegurando estabilidad, soporte y evolución.
-              </p>
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-[#0068ca] font-montserrat">Integraciones Estratégicas</h3>
-              <p className="text-gray-700 font-lato">
-                Potenciamos los sistemas existentes mediante integraciones eficientes que conectan eCommerce, CRM y automatizaciones de workflows.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* SERVICIOS */}
-      <section className="py-24 bg-[#0068ca] text-center text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat mb-16">
-            Soluciones Especializadas
-          </h2>
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Card 1 */}
-            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
-              <h3 className="text-2xl font-bold font-montserrat mb-4">Integraciones Web & Automatizaciones</h3>
-              <p className="text-gray-700 font-lato mb-6">
-                Conectamos CRMs, plataformas de eCommerce y sistemas externos con APIs seguras, optimizando los procesos comerciales de nuestros clientes.
-              </p>
-              <Link href="/services/crm-a-medida" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
-            </div>
-            {/* Card 2 */}
-            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
-              <h3 className="text-2xl font-bold font-montserrat mb-4">CMS & Desarrollo Backend</h3>
-              <p className="text-gray-700 font-lato mb-6">
-                Implementamos soluciones a medida sobre plataformas líderes como Shopify, WooCommerce y WordPress, combinando estabilidad con flexibilidad.
-              </p>
-              <Link href="/services/desarrollo-backend" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
-            </div>
-            {/* Card 3 */}
-            <div className="p-8 bg-white text-gray-900 rounded-xl shadow-md hover:shadow-xl transition-all">
-              <h3 className="text-2xl font-bold font-montserrat mb-4">Lead Generation Orgánica</h3>
-              <p className="text-gray-700 font-lato mb-6">
-                Diseñamos sistemas de prospección orgánica integrados a CRM, optimizando la captación, el nurturing y el cierre de oportunidades comerciales.
-              </p>
-              <Link href="/services/lead-generation" className="text-[#0068ca] font-bold hover:underline inline-block">
-                Ver más
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-24 bg-gray-900 text-center text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold font-montserrat mb-6">
-            ¿Listo para escalar tu infraestructura digital?
-          </h2>
-          <p className="text-lg font-lato max-w-2xl mx-auto mb-10">
-            Construyamos juntos soluciones que conecten tecnología, procesos y resultados de negocio reales.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="https://meetings.hubspot.com/apalmieri-paso"
-              className="bg-[#0068ca] hover:bg-[#0050a3] text-white font-bold py-4 px-10 rounded-lg transition-all inline-block"
-            >
-              Contactar
-            </Link>
-          </div>
+      {/* CTA FINAL: DARK GLASSMORFISM */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+            <div className="bg-gradient-to-br from-[#0068ca]/20 to-[#49c5b6]/20 border border-white/10 backdrop-blur-3xl rounded-[4rem] p-16 lg:p-32 text-center">
+                <h2 className="text-5xl lg:text-7xl font-black mb-10 tracking-tighter">
+                    ¿Hablamos de <br /> <span className="text-[#49c5b6]">escalabilidad real?</span>
+                </h2>
+                <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-12">
+                    Llevamos la automatización de inventarios y el análisis de negocios a otro nivel. Sin fricción, sin errores manuales.
+                </p>
+                <Link href="https://meetings.hubspot.com/apalmieri-paso" className="bg-[#49c5b6] text-black font-black py-6 px-16 rounded-2xl hover:bg-white transition-all text-xl uppercase tracking-widest shadow-[0_0_50px_rgba(73,197,182,0.3)]">
+                    Iniciar Transformación
+                </Link>
+            </div>
         </div>
       </section>
 
-      {/* CARROUSEL DE LOGOS DE CLIENTES */}
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-2">
-          <Swiper
-            modules={[Autoplay]}
-            slidesPerView={2}
-            spaceBetween={20}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
-            breakpoints={{
-              640: { slidesPerView: 3 },
-              768: { slidesPerView: 5 },
-              1024: { slidesPerView: 6 },
-            }}
-            loop={true}
-          >
-            <SwiperSlide>
-              <div className="flex justify-center">
-                <Image src="/axiacore.png" alt="Axiacore Logo" width={75} height={40} className="object-contain" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex justify-center">
-                <Image src="/seven.webp" alt="Seven Logo" width={75} height={40} className="object-contain" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex justify-center">
-                <Image src="/alaxs.png" alt="Alaxs Logo" width={75} height={40} className="object-contain" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex justify-center">
-                <Image src="/shakeagain.png" alt="Shake Again Logo" width={55} height={28} className="object-contain" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex justify-center">
-                <Image src="/atencion.webp" alt="Grupo Atención Logo" width={55} height={28} className="object-contain" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex justify-center">
-                <Image src="/logo-emergencias.png" alt="Emergencias Logo" width={75} height={40} className="object-contain" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex justify-center">
-                <Image src="/Proyecto nuevo (1).webp" alt="310 Nutrition Logo" width={55} height={28} className="object-contain" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex justify-center">
-                <Image src="/Proyecto nuevo.webp" alt="Colorshop Logo" width={55} height={28} className="object-contain" />
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }

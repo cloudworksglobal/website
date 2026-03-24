@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {
   CheckCircleIcon,
@@ -10,177 +10,158 @@ import {
   ChartBarIcon,
   CursorArrowRaysIcon,
   WrenchScrewdriverIcon,
+  ChevronDownIcon
 } from "@heroicons/react/24/outline";
 
-const Servicio = ({ title, subtitle, description, features, icon: Icon }) => {
+const Servicio = ({ title, subtitle, description, features, icon: Icon, index }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
     <motion.div
-      whileHover={{ scale: 1.03, rotate: 0.5 }}
-      transition={{ duration: 0.3 }}
-      className="bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition-all group relative overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative group h-full"
     >
-      <div className="flex items-center gap-4 mb-4">
-        <div className="p-3 bg-blue-100 rounded-full group-hover:scale-110 transition">
-          <Icon className="h-6 w-6 text-blue-600" />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-blue-700 group-hover:text-blue-800">{title}</h3>
-          <p className="text-sm text-gray-500">{subtitle}</p>
+      <div className="h-full bg-slate-900/40 backdrop-blur-xl border border-slate-800 p-8 rounded-[2.5rem] hover:border-[#49c5b6]/50 transition-all duration-500 shadow-2xl overflow-hidden">
+        {/* Glow Effect */}
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#0068ca] rounded-full blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+        
+        <div className="relative z-10">
+          <div className="flex items-center gap-5 mb-6">
+            <div className="p-4 bg-gradient-to-br from-[#0068ca] to-[#49c5b6] rounded-2xl shadow-lg shadow-blue-900/20 group-hover:scale-110 transition-transform duration-300">
+              <Icon className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-black text-white leading-tight">{title}</h3>
+              <p className="text-[#49c5b6] font-mono text-[10px] uppercase tracking-[0.2em] mt-1">{subtitle}</p>
+            </div>
+          </div>
+
+          <p className="text-slate-400 mb-8 leading-relaxed text-sm">
+            {description}
+          </p>
+
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="flex items-center gap-2 text-xs font-bold text-white uppercase tracking-widest hover:text-[#49c5b6] transition-colors mb-4"
+          >
+            {expanded ? "Cerrar Especificaciones" : "Ver Especificaciones Técnicas"}
+            <ChevronDownIcon className={`h-4 w-4 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} />
+          </button>
+
+          <AnimatePresence>
+            {expanded && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="pt-4 border-t border-slate-800">
+                  <ul className="space-y-3">
+                    {features.map((f, i) => (
+                      <li key={i} className="flex items-start gap-3 text-xs text-slate-400 group/item">
+                        <span className="text-[#49c5b6] mt-0.5">▹</span>
+                        <span className="group-hover/item:text-white transition-colors">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-      <motion.p
-        className="text-gray-700 mb-4"
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.4 }}
-      >
-        {description}
-      </motion.p>
-
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="text-sm text-blue-600 font-medium hover:underline mb-3"
-      >
-        {expanded ? "Ocultar detalles" : "Ver beneficios"}
-      </button>
-
-      <motion.ul
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
-        transition={{ duration: 0.4 }}
-        className="overflow-hidden list-disc list-inside text-sm text-gray-600 space-y-1"
-      >
-        {features.map((f, i) => (
-          <li key={i} className="hover:text-blue-600 transition-colors duration-200">{f}</li>
-        ))}
-      </motion.ul>
     </motion.div>
   );
 };
 
 export default function Servicios() {
+  const data = [
+    {
+      title: "CRM a Medida",
+      subtitle: "Smart Management",
+      description: "Desarrollamos arquitecturas de datos para gestionar leads con lógica de negocio real, no solo formularios.",
+      icon: CheckCircleIcon,
+      features: ["Pipeline visual reactivo", "Machine Learning Scoring", "API First Architecture", "Custom Field Logic"]
+    },
+    {
+      title: "Automatización",
+      subtitle: "Python Powered",
+      description: "Scripts autónomos que conectan procesos comerciales con inventarios y logística en tiempo real.",
+      icon: Cog6ToothIcon,
+      features: ["Multi-Step Workflows", "Inventory Sync Workers", "Auto-Billing (Stripe/ERP)", "Slack/Bot Integration"]
+    },
+    {
+      title: "Integraciones",
+      subtitle: "Ecosystem Connectivity",
+      description: "Somos expertos en conectar lo imposible. APIs, Webhooks y capas de autenticación robustas.",
+      icon: LinkIcon,
+      features: ["Odoo & SAP Bridge", "Shopify/WooCommerce Sync", "OAuth 2.0 Auth Flow", "Real-time Data Streaming"]
+    },
+    {
+      title: "Performance Audit",
+      subtitle: "Vitals Optimization",
+      description: "Llevamos tus métricas a 100/100. SSR, Edge Computing y optimización de assets pesados.",
+      icon: ChartBarIcon,
+      features: ["Core Web Vitals Fix", "Image AI Compression", "Server Side Rendering", "Edge Cache Delivery"]
+    },
+    {
+      title: "UX/UI Dinámico",
+      subtitle: "Elite Frontend",
+      description: "Interfaces de alto impacto con Next.js y React. Mobile-first y animaciones que guían al usuario.",
+      icon: CursorArrowRaysIcon,
+      features: ["Framer Motion Micro-interactions", "A/B Testing Layers", "Layouts Dinámicos", "Accesibilidad WCAG"]
+    },
+    {
+      title: "QA & Stability",
+      subtitle: "Continuous Testing",
+      description: "Infraestructura sin errores. Pruebas automatizadas que corren antes de cada deploy.",
+      icon: WrenchScrewdriverIcon,
+      features: ["E2E Cypress Testing", "Jest Unit Tests", "CI/CD Pipeline Support", "Automated Bug Reporting"]
+    }
+  ];
+
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
-      <div className="container mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-extrabold text-gray-900 text-center mb-6"
-        >
-          Servicios para transformar tu negocio digital
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-16"
-        >
-          En Cloudworks desarrollamos soluciones que escalan contigo: tecnología personalizada para optimizar ventas, conectar tus sistemas y automatizar tu operación.
-        </motion.p>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <Servicio
-            title="CRM a Medida"
-            subtitle="Gestión Comercial Inteligente"
-            description="Diseñamos CRMs modulares enfocados en tus flujos reales. Cada contacto, lead o venta se sigue, automatiza y mide."
-            icon={CheckCircleIcon}
-            features={[
-              "Seguimiento automatizado de leads",
-              "Embudo visual y editable",
-              "Alertas, recordatorios y reportes en tiempo real",
-              "Integración con plataformas de email marketing",
-              "Roles personalizados por usuario",
-              "Segmentación de clientes con etiquetas dinámicas",
-            ]}
-          />
-
-          <Servicio
-            title="Automatización de Procesos"
-            subtitle="Ahorro de tiempo y recursos"
-            description="Eliminamos tareas repetitivas con automatizaciones que conectan áreas. Desde presupuestos a onboarding y soporte."
-            icon={Cog6ToothIcon}
-            features={[
-              "Cotizaciones automáticas",
-              "Notificaciones entre equipos",
-              "Flujos de trabajo personalizados",
-              "Integración con Slack y CRMs externos",
-              "Automatización de tareas de seguimiento",
-              "Condiciones lógicas en flujos multicanal",
-            ]}
-          />
-
-          <Servicio
-            title="Integraciones & APIs"
-            subtitle="Tu ecosistema conectado"
-            description="Conectamos tu ecommerce, ERP y CRM. Hacemos que la info fluya entre herramientas para que vos tomes mejores decisiones."
-            icon={LinkIcon}
-            features={[
-              "Integraciones Shopify, WooCommerce, Odoo, HubSpot",
-              "Webhooks personalizados y sincronización",
-              "Documentación clara y soporte técnico",
-              "Single Sign-On (SSO) y autenticación OAuth",
-              "Control de versiones en endpoints",
-              "Logs detallados y fallback ante errores",
-            ]}
-          />
-
-          <Servicio
-            title="Infraestructura & Performance"
-            subtitle="Escalabilidad y velocidad garantizada"
-            description="Diseñamos arquitecturas modulares con métricas técnicas de alto rendimiento y foco en Core Web Vitals."
-            icon={ChartBarIcon}
-            features={[
-              "Renderizado SSR y edge caching",
-              "Uso de CDN y optimización de imágenes",
-              "Lazy loading estratégico de componentes",
-              "Optimización para LCP, FID, CLS",
-              "Infraestructura autoescalable en Vercel o AWS",
-              "Métricas visualizadas desde consola central",
-            ]}
-          />
-
-          <Servicio
-            title="UX/UI & Frontend Dinámico"
-            subtitle="Interacción moderna orientada a resultados"
-            description="Creamos interfaces visualmente atractivas, mobile-first, con animaciones suaves y performance óptimo."
-            icon={CursorArrowRaysIcon}
-            features={[
-              "Componentes con microinteracciones",
-              "Formularios progresivos y condicionales",
-              "Layouts adaptativos para ecommerce",
-              "Testing de conversión A/B integrado",
-              "Carga progresiva y priorización visual",
-              "Accesibilidad e internacionalización",
-            ]}
-          />
-
-          <Servicio
-            title="Testing & QA Automatizado"
-            subtitle="Calidad continua antes y después del deploy"
-            description="Validamos cada funcionalidad con pruebas automatizadas para garantizar estabilidad en todo el ciclo de vida."
-            icon={WrenchScrewdriverIcon}
-            features={[
-              "Pruebas unitarias con Jest",
-              "End-to-End testing con Cypress",
-              "Cobertura automatizada en CI/CD",
-              "Análisis de performance Lighthouse",
-              "Pruebas funcionales con usuarios reales",
-              "Reportes automáticos para bugs y coverage",
-            ]}
-          />
+    <section className="py-32 bg-[#020617] relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0068ca] rounded-full blur-[150px] opacity-[0.05]"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-24">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8"
+          >
+            Arquitectura de <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0068ca] to-[#49c5b6]">Servicios Elite</span>
+          </motion.h2>
+          <p className="text-xl text-slate-400 font-light leading-relaxed">
+            En Cloudworks Global no "hacemos páginas". Construimos sistemas de software que escalan, automatizan y transforman el fondo de tu negocio.
+          </p>
         </div>
 
-        <div className="mt-24 text-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {data.map((servicio, index) => (
+            <Servicio key={index} {...servicio} index={index} />
+          ))}
+        </div>
+
+        <div className="mt-32 text-center">
           <motion.div
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="inline-block bg-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block relative group"
           >
-            <Link href="/contact">Contactanos para un diagnóstico gratuito</Link>
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#0068ca] to-[#49c5b6] rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <Link 
+              href="https://meetings.hubspot.com/apalmieri-paso"
+              className="relative px-12 py-6 bg-slate-900 border border-slate-700 rounded-2xl text-xl font-bold text-white transition-all block"
+            >
+              Iniciar Auditoría Técnica
+            </Link>
           </motion.div>
         </div>
       </div>
