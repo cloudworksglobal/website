@@ -20,7 +20,7 @@ export default function BlogPage() {
     {
       title: "Soberanía de Datos y Nube Híbrida",
       desc: "Por qué las empresas líderes están abandonando la nube pública total para adoptar modelos híbridos más seguros y eficientes.",
-      href: "/blog/soberania-datos-hibrida",
+      href: "/blog/soberania-hibrida-data",
       tag: "Cloud Strategy",
     },
     {
