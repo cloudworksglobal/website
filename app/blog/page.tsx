@@ -10,22 +10,25 @@ export default function BlogPage() {
       desc: "Descubre cómo aprovechar un ecosistema digital para optimizar el desarrollo comercial mediante arquitecturas escalables.",
       href: "/blog/Infraestructura_Digital",
       tag: "Arquitectura",
-      readTime: "5 min read"
     },
     {
       title: "Optimización de eCommerce",
       desc: "Estrategias avanzadas para mejorar velocidad, UX y conversión en tiendas Shopify y WooCommerce utilizando Edge Computing.",
       href: "/blog/optimizacion-ecommerce",
       tag: "Performance",
-      readTime: "4 min read"
+    },
+    {
+      title: "Soberanía de Datos y Nube Híbrida",
+      desc: "Por qué las empresas líderes están abandonando la nube pública total para adoptar modelos híbridos más seguros y eficientes.",
+      href: "/blog/soberania-datos-hibrida",
+      tag: "Cloud Strategy",
     },
     {
       title: "Automatización con APIs",
       desc: "Cómo integrar herramientas y APIs personalizadas para hacer que tu negocio trabaje de forma automática y sin errores.",
       href: "/blog/automatizacion-apis",
       tag: "Automation",
-      readTime: "6 min read"
-    }
+    },
   ];
 
   return (
@@ -43,7 +46,7 @@ export default function BlogPage() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-[#49c5b6] font-mono text-xs tracking-[0.4em] uppercase mb-4 block">
-              // Cloudworks Knowledge Hub
+              // Cloudgworks Knowledge Hub
             </span>
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.85]">
               Insights <br />
@@ -61,7 +64,7 @@ export default function BlogPage() {
       {/* --- LISTADO DE ARTÍCULOS (GRID DE CRISTAL) --- */}
       <section className="py-24 relative">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post, idx) => (
               <motion.div
                 key={idx}
@@ -76,8 +79,8 @@ export default function BlogPage() {
                   <span className="text-[10px] font-mono text-[#49c5b6] border border-[#49c5b6]/30 px-3 py-1 rounded-full uppercase tracking-widest">
                     {post.tag}
                   </span>
-                  <span className="text-[10px] font-mono text-slate-500 italic">
-                    {post.readTime}
+                  <span className="text-[10px] font-mono text-slate-600 uppercase tracking-tighter">
+                    {`#${idx + 1 < 10 ? `0${idx + 1}` : idx + 1}`}
                   </span>
                 </div>
 
