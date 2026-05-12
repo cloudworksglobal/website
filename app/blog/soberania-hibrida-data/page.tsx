@@ -16,7 +16,7 @@ export default function SoberaniaHibridaPage() {
           className="mb-16 border-l-4 border-[#49c5b6] pl-8"
         >
           <span className="text-[#49c5b6] font-mono text-xs tracking-[0.3em] uppercase mb-4 block">
-            // Intelligence Report 2026 _ Cloudgworks Global
+            // Intelligence Report 2026 _ Cloudworks Global
           </span>
           <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.85]">
             La Paradoja <br />
@@ -38,7 +38,7 @@ export default function SoberaniaHibridaPage() {
         >
           <Image 
             src="/hibrida.png" 
-            alt="Cloudgworks Hybrid Infrastructure" 
+            alt="Cloudworks Hybrid Infrastructure" 
             fill
             className="object-cover opacity-80"
             priority
@@ -70,7 +70,7 @@ export default function SoberaniaHibridaPage() {
             </p>
 
             <div className="p-8 rounded-3xl bg-gradient-to-br from-[#0068ca]/10 to-transparent border-l-2 border-[#0068ca]">
-              <h3 className="text-white font-black mb-4 uppercase tracking-tighter">La Visión de Cloudgworks</h3>
+              <h3 className="text-white font-black mb-4 uppercase tracking-tighter">La Visión de Cloudworks</h3>
               <p className="text-sm italic">
                 "Observamos que la verdadera eficiencia no reside en la migración masiva, sino en la orquestación inteligente. La Nube Híbrida surge no como una alternativa, sino como la evolución necesaria."
               </p>
@@ -95,7 +95,7 @@ export default function SoberaniaHibridaPage() {
             </p>
 
             <p className="border-t border-white/10 pt-10">
-              El futuro de la tecnología no es 100% nube, es **100% control**. En **Cloudgworks**, no solo construimos conexiones; diseñamos fortalezas digitales que permiten a las empresas escalar sin ceder su soberanía.
+              El futuro de la tecnología no es 100% nube, es **100% control**. En **Cloudworks**, no solo construimos conexiones; diseñamos fortalezas digitales que permiten a las empresas escalar sin ceder su soberanía.
             </p>
           </motion.div>
 
@@ -141,7 +141,7 @@ export default function SoberaniaHibridaPage() {
           <div className="relative z-10">
             <h3 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter">¿Tu arquitectura está lista <br /> para el <span className="text-[#49c5b6]">2026?</span></h3>
             <p className="text-slate-400 mb-10 max-w-xl mx-auto text-lg">
-              Analicemos juntos cómo una estrategia híbrida diseñada por Cloudgworks puede disparar tu eficiencia comercial.
+              Analicemos juntos cómo una estrategia híbrida diseñada por Cloudworks puede disparar tu eficiencia comercial.
             </p>
             <Link 
               href="/contact" 
