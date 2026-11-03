@@ -6,70 +6,13 @@ import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import ServiceConfigurator from "../components/ServiceConfigurator";
+import TrustBar from "../components/TrustBar";
+import EcosystemShowcase from "../components/EcosystemShowcase";
+import ServiceConfigurator from "../components/ServiceConfigurator";
 
 export default function Home() {
   return (
     <div className="bg-[#020617] text-white selection:bg-[#49c5b6] selection:text-white">
-      
-      {/* HERO: RED NEURONAL & IA */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-        {/* Efecto de Fondo: Redes y Nodos */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-          <div className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-[#0068ca] rounded-full blur-[120px] opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-[#49c5b6] rounded-full blur-[120px] opacity-20"></div>
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-block px-4 py-1 rounded-full border border-[#49c5b6]/30 bg-[#49c5b6]/10 text-[#49c5b6] text-sm font-mono mb-6 animate-bounce">
-              // AI & AUTOMATION ENGINE READY
-            </div>
-            <h1 className="text-6xl lg:text-8xl font-black tracking-tighter leading-none mb-8">
-              Infraestructura <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0068ca] via-[#49c5b6] to-white">
-                Autónoma
-              </span>
-            </h1>
-            <p className="text-xl text-slate-400 max-w-lg leading-relaxed mb-10">
-              No solo hacemos webs. Construimos ecosistemas con **Python Scrips**, **IA Agents** e integraciones de **APIs críticas** para escalar inventarios y ventas sin intervención humana.
-            </p>
-            <div className="flex flex-wrap gap-5">
-              <Link href="#automation" className="bg-white text-black hover:bg-[#49c5b6] hover:text-white font-bold py-4 px-10 rounded-xl transition-all duration-300">
-                Ver Ecosistemas
-              </Link>
-              <Link href="https://meetings.hubspot.com/apalmieri-paso" className="border border-slate-700 hover:border-[#0068ca] bg-slate-900/50 backdrop-blur-md py-4 px-10 rounded-xl transition-all">
-                Agendar Consultoría Técnica
-              </Link>
-            </div>
-          </div>
-
-          {/* Visual de Código / IA */}
-          <div className="hidden lg:block relative">
-            <div className="bg-slate-900/80 border border-slate-700 rounded-2xl p-6 font-mono text-sm shadow-2xl backdrop-blur-xl">
-              <div className="flex gap-2 mb-4">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="ml-4 text-slate-500">inventory_sync.py</span>
-              </div>
-              <p className="text-blue-400">import <span className="text-white">tensorflow as tf</span></p>
-              <p className="text-blue-400">from <span className="text-white">cloudworks_ai import AutomationEngine</span></p>
-              <p className="text-slate-500 mt-4"># Iniciando análisis de inventario B2B</p>
-              <p className="text-green-400">engine = AutomationEngine(api_key="CW-992")</p>
-              <p className="text-green-400">engine.sync_stock(provider="Shopify", erp="SAP")</p>
-              <p className="text-white mt-4 animate-pulse">{`> Processing neural weights... 98%`}</p>
-            </div>
-            {/* Logo de fondo sutil */}
-            <div className="absolute -bottom-10 -right-10 opacity-20 grayscale">
-               <Image src="/cloudworks ms-icon-310x310.png" width={200} height={200} alt="Logo Background" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECCIÓN INTERACTIVA DE CONVERSIÓN */}
-      <ServiceConfigurator />
 
 
       {/* SECCIÓN: CORE ENGINE (TECNOLOGÍAS WEB) */}
@@ -108,6 +51,12 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+      {/* SOCIAL PROOF / ENTERPRISE METRICS */}
+      <TrustBar />
+
+      {/* CATÁLOGO DE SERVICIOS INTERACTIVO */}
+      <ServiceConfigurator />
 
 
 {/* SECCIÓN: AUDITORÍA DE PAGE SPEED & OPTIMIZACIÓN */}
@@ -331,6 +280,11 @@ export default function Home() {
 
 
       {/* CTA FINAL: DARK GLASSMORFISM */}
+      
+
+      {/* CAPA DE ARQUITECTURA & INTEGRACIONES */}
+      <EcosystemShowcase />
+
       <section className="py-32 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
             <div className="bg-gradient-to-br from-[#0068ca]/20 to-[#49c5b6]/20 border border-white/10 backdrop-blur-3xl rounded-[4rem] p-16 lg:p-32 text-center">
@@ -351,5 +305,6 @@ export default function Home() {
     </div>
   );
 }
+
 
 
