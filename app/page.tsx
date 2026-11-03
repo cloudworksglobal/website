@@ -1,10 +1,11 @@
-"use client";
+﻿"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
+import ServiceConfigurator from "../components/ServiceConfigurator";
 
 export default function Home() {
   return (
@@ -67,6 +68,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SECCIÓN INTERACTIVA DE CONVERSIÓN */}
+      <ServiceConfigurator />
+
+
       {/* SECCIÓN: CORE ENGINE (TECNOLOGÍAS WEB) */}
 <section className="py-24 bg-black relative overflow-hidden border-t border-slate-800">
   <div className="container mx-auto px-6">
@@ -103,6 +108,7 @@ export default function Home() {
     </div>
   </div>
 </section>
+
 
 {/* SECCIÓN: AUDITORÍA DE PAGE SPEED & OPTIMIZACIÓN */}
 <section className="py-32 bg-[#020617] relative">
@@ -178,6 +184,7 @@ export default function Home() {
 
   </div>
 </section>
+
 
 {/* SECCIÓN: DATA ARCHITECTURE & AUTOMATION BLUEPRINT */}
 <section className="py-24 bg-black relative border-t border-slate-800/50">
@@ -256,6 +263,7 @@ export default function Home() {
   </div>
 </section>
 
+
       {/* SECCIÓN DE LOGROS: WORKFLOWS & DATA */}
       <section id="automation" className="py-32 relative bg-[#020617]">
         <div className="container mx-auto px-6">
@@ -304,6 +312,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* SECCIÓN DE "NERD POWER": TECH STACK DINÁMICO */}
       <section className="py-24 bg-black/50">
         <div className="container mx-auto px-6 text-center">
@@ -319,6 +328,7 @@ export default function Home() {
             </div>
         </div>
       </section>
+
 
       {/* CTA FINAL: DARK GLASSMORFISM */}
       <section className="py-32 relative overflow-hidden">
@@ -337,6 +347,9 @@ export default function Home() {
         </div>
       </section>
 
+
     </div>
   );
 }
+
+
