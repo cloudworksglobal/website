@@ -8,7 +8,7 @@ import "swiper/css/autoplay";
 import ServiceConfigurator from "../components/ServiceConfigurator";
 import TrustBar from "../components/TrustBar";
 import EcosystemShowcase from "../components/EcosystemShowcase";
-import ServiceConfigurator from "../components/ServiceConfigurator";
+import AgentSimulator from "../components/AgentSimulator";
 
 export default function Home() {
   return (
@@ -283,6 +283,9 @@ export default function Home() {
       
 
       {/* CAPA DE ARQUITECTURA & INTEGRACIONES */}
+      <AgentSimulator />
+
+      {/* CAPA DE ARQUITECTURA & INTEGRACIONES */}
       <EcosystemShowcase />
 
       <section className="py-32 relative overflow-hidden">
@@ -305,6 +308,8 @@ export default function Home() {
     </div>
   );
 }
+
+
 
 
 

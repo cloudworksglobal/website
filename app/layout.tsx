@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className="bg-[#020617] text-white antialiased selection:bg-[#49c5b6] selection:text-white">
+      <body className="bg-[#020617] text-white antialiased selection:bg-[#49c5b6] selection:text-white" suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <Footer />
@@ -30,3 +30,4 @@ export default function RootLayout({
     </html>
   );
 }
+
