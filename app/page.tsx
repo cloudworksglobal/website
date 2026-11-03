@@ -59,6 +59,8 @@ export default function Home() {
       {/* PROPUESTA DE VALOR, CUMPLIMIENTO E INDUSTRIAS */}
       <ValueAndIndustries />
 
+      {/* PROPUESTA DE VALOR, CUMPLIMIENTO E INDUSTRIAS */}
+
       {/* CATÁLOGO DE SERVICIOS INTERACTIVO */}
       <ServiceConfigurator />
 
@@ -312,6 +314,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
