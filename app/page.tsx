@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import ServiceConfigurator from "../components/ServiceConfigurator";
 import TrustBar from "../components/TrustBar";
+import ValueAndIndustries from "../components/ValueAndIndustries";
 import EcosystemShowcase from "../components/EcosystemShowcase";
 import AgentSimulator from "../components/AgentSimulator";
 
@@ -54,6 +55,9 @@ export default function Home() {
 
       {/* SOCIAL PROOF / ENTERPRISE METRICS */}
       <TrustBar />
+
+      {/* PROPUESTA DE VALOR, CUMPLIMIENTO E INDUSTRIAS */}
+      <ValueAndIndustries />
 
       {/* CATÁLOGO DE SERVICIOS INTERACTIVO */}
       <ServiceConfigurator />
@@ -308,6 +312,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
