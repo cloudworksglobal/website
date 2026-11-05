@@ -1,6 +1,7 @@
 ﻿import "@/src/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export const metadata = {
   title: "Cloudworks Global | Technical Solutions, APIs & Headless Engineering",
@@ -23,11 +24,12 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className="bg-[#020617] text-white antialiased selection:bg-[#49c5b6] selection:text-white" suppressHydrationWarning>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );
 }
-
